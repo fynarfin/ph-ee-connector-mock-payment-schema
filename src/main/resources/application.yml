@@ -1,5 +1,5 @@
 camel:
-  server-port: 5000
+  server-port: 500
   springboot:
     main-run-controller: true
   dataformat:
@@ -31,3 +31,15 @@ mockFailure:
 logging:
   level:
     root: INFO
+
+bpmns:
+  tenants:
+    - id: "lion"
+      flows:
+        payment-transfer: "mock_payment_transfer-{dfspid}"
+    - id: "rhino"
+      flows:
+        payment-transfer: "MockPayerFundTransfer-{dfspid}"
+    - id: "gorilla"
+      flows:
+        payment-transfer: "PayerFundTransfer-{dfspid}"
